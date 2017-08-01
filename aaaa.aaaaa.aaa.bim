@@ -1,0 +1,252 @@
+{
+  "name": "aaa",
+  "description": "Imported database from sql server 'analytics-db-server.database.windows.net' and database 'AdWorksSample'",
+  "compatibilityLevel": 1200,
+  "model": {
+    "name": "aaa",
+    "description": "A Tabular data model at the 1200 compatibility level.",
+    "defaultMode": "directQuery",
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer analytics-db-server.database.windows.net AdWorksSample",
+        "description": "A data source definition that uses explicit sql server credentials from connection string",
+        "connectionString": "Provider=SQLNCLI11;Server=tcp:analytics-db-server.database.windows.net;Initial Catalog=AdWorksSample;Persist Security Info=False;User ID=analytics_admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30",
+        "impersonationMode": "impersonateServiceAccount"
+      }
+    ],
+    "tables": [
+      {
+        "name": "SalesLT.Product",
+        "description": "All data from SalesLT.Product",
+        "columns": [
+          {
+            "name": "ProductID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductID"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "Name",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "ProductNumber",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "ProductNumber",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "StandardCost",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "StandardCost",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "ListPrice",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "ListPrice",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "Weight",
+            "dataType": "decimal",
+            "sourceColumn": "Weight",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "ProductCategoryID",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryID",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "ProductModelID",
+            "dataType": "int64",
+            "sourceColumn": "ProductModelID",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "SellStartDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "SellStartDate",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "SellEndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "SellEndDate",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "DiscontinuedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "DiscontinuedDate",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "ThumbNailPhoto",
+            "dataType": "binary",
+            "sourceColumn": "ThumbNailPhoto",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "ThumbnailPhotoFileName",
+            "dataType": "string",
+            "sourceColumn": "ThumbnailPhotoFileName",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "rowguid",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "rowguid",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "ModifiedDate",
+            "displayOrdinal": 16
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesLT.Product",
+            "source": {
+              "query": "SELECT [ProductID],[Name],[ProductNumber],[Color],[StandardCost],[ListPrice],[Size],[Weight],[ProductCategoryID],[ProductModelID],[SellStartDate],[SellEndDate],[DiscontinuedDate],[ThumbNailPhoto],[ThumbnailPhotoFileName],[rowguid],[ModifiedDate] FROM SalesLT.Product",
+              "dataSource": "SqlServer analytics-db-server.database.windows.net AdWorksSample"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SalesLT.ProductCategory",
+        "description": "All data from SalesLT.ProductCategory",
+        "columns": [
+          {
+            "name": "ProductCategoryID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductCategoryID"
+          },
+          {
+            "name": "ParentProductCategoryID",
+            "dataType": "int64",
+            "sourceColumn": "ParentProductCategoryID",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "Name",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "rowguid",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "rowguid",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "ModifiedDate",
+            "displayOrdinal": 4
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesLT.ProductCategory",
+            "source": {
+              "query": "SELECT [ProductCategoryID],[ParentProductCategoryID],[Name],[rowguid],[ModifiedDate] FROM SalesLT.ProductCategory",
+              "dataSource": "SqlServer analytics-db-server.database.windows.net AdWorksSample"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SalesLT.ProductDescription",
+        "description": "All data from SalesLT.ProductDescription",
+        "columns": [
+          {
+            "name": "ProductDescriptionID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductDescriptionID"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "Description",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "rowguid",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "rowguid",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "ModifiedDate",
+            "displayOrdinal": 3
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesLT.ProductDescription",
+            "source": {
+              "query": "SELECT [ProductDescriptionID],[Description],[rowguid],[ModifiedDate] FROM SalesLT.ProductDescription",
+              "dataSource": "SqlServer analytics-db-server.database.windows.net AdWorksSample"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "344c15f5-6b8f-468c-85c7-e7234ebabc8b",
+        "fromTable": "SalesLT.Product",
+        "fromColumn": "ProductCategoryID",
+        "toTable": "SalesLT.ProductCategory",
+        "toColumn": "ProductCategoryID"
+      }
+    ],
+    
+    "annotations":[
+      {
+        "name": "https://github.com/VladMatyunin/csharp_study",
+        "value": "csharp_study"
+      }
+    ]
+  }
+
+}

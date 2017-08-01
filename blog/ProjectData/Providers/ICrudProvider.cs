@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ProjectData.Providers
 {
-    interface ICrudProvider<T>
+    public interface ICrudProvider<T>
     {
-        T GetById(int id);
+        Task<T> GetById(int id);
 
-        void Update(T obj);
+        Task Update(T obj);
 
-        void Update(int id, T obj);
+        Task Update(int id, T obj);
 
-        void Delete(int id);
+        Task Delete(int id);
 
-        void Create(T obj);
+        Task Create(T obj);
 
-        void GetAll();
+        Task<IEnumerable<T>> GetAll();
     }
 }

@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ProjectData.Model;
+using ProjectData.Providers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blog
 {
@@ -27,6 +30,12 @@ namespace Blog
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<BlogDatabaseContext>(options => options.UseSqlServer(connection));
+            // services
+            //.AddIdentity<User, UserRole>()
+            //.AddEntityFrameworkStores<BlogDatabaseContext>()
+            // .AddDefaultTokenProviders();
             // Add framework services.
             services.AddMvc();
         }
@@ -47,6 +56,14 @@ namespace Blog
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "Cookies",
+                LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login"),
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true
+            });
+
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
@@ -55,6 +72,8 @@ namespace Blog
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
         }
     }
 }

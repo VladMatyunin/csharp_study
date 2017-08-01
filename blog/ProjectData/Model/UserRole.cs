@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ProjectData.Model
 {
-    enum UserRole
+    public class UserRole
     {
-        USER, ADMIN
+        
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjectData.Model
 {
-    class Post
+    public class Post
     {
         public Post()
         {

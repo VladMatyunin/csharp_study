@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProjectData.Providers
 {
-    class BlogDatabaseContext : DbContext
+    public class BlogDatabaseContext : DbContext
     {
         public DbSet<User> Users { get; set; }
 

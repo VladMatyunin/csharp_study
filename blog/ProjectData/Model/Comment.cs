@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjectData.Model
 {
-    class Comment
+    public class Comment
     {
         public int Id { get; set; }
 

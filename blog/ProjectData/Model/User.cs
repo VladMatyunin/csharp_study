@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjectData.Model
 {
-    class User
+    public class User
     {
         public User()
         {

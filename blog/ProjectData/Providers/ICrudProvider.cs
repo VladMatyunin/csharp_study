@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectData.Providers
+namespace Blog.ProjectData
 {
     public interface ICrudProvider<T>
     {

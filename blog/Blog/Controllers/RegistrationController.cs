@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Blog.ViewModels;
-using ProjectData.Providers;
 using Microsoft.EntityFrameworkCore;
-using ProjectData.Model;
-using Blog.Helpers;
+using Blog.ProjectData;
 
-namespace Blog.Controllers
+namespace Blog.Blog
 {
     public class RegistrationController : Controller
     {

@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ProjectData.Providers;
-using Blog.ViewModels;
-using ProjectData.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using Blog.Helpers;
+using Blog.ProjectData;
 
-namespace Blog.Controllers
+namespace Blog.Blog
 {
     [Route("/login")]
     public class LoginController : Controller

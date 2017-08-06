@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjectData.Model
+namespace Blog.ProjectData
 {
     public class UserRole
     {

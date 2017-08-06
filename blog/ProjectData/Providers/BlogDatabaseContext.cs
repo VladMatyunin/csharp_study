@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjectData.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjectData.Providers
+namespace Blog.ProjectData
 {
     public class BlogDatabaseContext : DbContext
     {

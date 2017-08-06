@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace Blog.Helpers
+namespace Blog.Blog
 {
     public class SecurityHelper
     {

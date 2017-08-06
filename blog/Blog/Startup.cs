@@ -7,11 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ProjectData.Model;
-using ProjectData.Providers;
 using Microsoft.EntityFrameworkCore;
+using Blog.ProjectData;
 
-namespace Blog
+namespace Blog.Blog
 {
     public class Startup
     {

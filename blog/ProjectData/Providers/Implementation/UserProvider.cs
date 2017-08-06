@@ -1,4 +1,5 @@
-﻿using ProjectData.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjectData.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectData.Providers
 {
-    class UserProvider : IUserProvider
+    public class UserProvider : IUserProvider
     {
         private BlogDatabaseContext _dbContext;
 
@@ -22,6 +23,11 @@ namespace ProjectData.Providers
         public Task Delete(int id)
         {
             return Task.Run(()=>_dbContext.Remove(GetById(id).Result));
+        }
+
+        public async Task<User> FindByEmail(string email)
+        {
+            return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public Task<IEnumerable<User>> GetAll()

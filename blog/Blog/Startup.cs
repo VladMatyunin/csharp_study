@@ -32,6 +32,9 @@ namespace Blog
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<BlogDatabaseContext>(options => options.UseSqlServer(connection));
+            services.AddSingleton<ICommentProvider, CommentProvider>();
+            services.AddSingleton<IUserProvider, UserProvider>();
+            services.AddSingleton<IPostProvider, PostProvider>();
             // services
             //.AddIdentity<User, UserRole>()
             //.AddEntityFrameworkStores<BlogDatabaseContext>()

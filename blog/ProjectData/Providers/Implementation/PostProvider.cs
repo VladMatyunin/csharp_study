@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectData.Providers
 {
-    class PostProvider : IPostProvider
+    public class PostProvider : IPostProvider
     {
         private BlogDatabaseContext _dbContext;
 
